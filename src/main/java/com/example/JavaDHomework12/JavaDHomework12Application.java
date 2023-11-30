@@ -2,20 +2,23 @@ package com.example.JavaDHomework12;
 
 import com.example.JavaDHomework12.note.Note;
 import com.example.JavaDHomework12.note.NoteService;
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 @SpringBootApplication
 public class JavaDHomework12Application {
+    private final NoteService noteService;
 
 
     public static void main(String[] args) {
         SpringApplication.run(JavaDHomework12Application.class, args);
-
-        NoteService noteService = new NoteService();
-
+    }
+    @PostConstruct
+    public void init() {
         Note note1 = new Note();
         note1.setTitle("Title 1");
         note1.setContent("Content 1");

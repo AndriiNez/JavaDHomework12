@@ -8,15 +8,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+
 @RequiredArgsConstructor
 @SpringBootApplication
 public class JavaDHomework12Application {
-    private final NoteService noteService;
 
+    private final NoteService noteService;
 
     public static void main(String[] args) {
         SpringApplication.run(JavaDHomework12Application.class, args);
     }
+
     @PostConstruct
     public void init() {
         Note note1 = new Note();
@@ -65,5 +67,3 @@ public class JavaDHomework12Application {
         }
     }
 }
-
-

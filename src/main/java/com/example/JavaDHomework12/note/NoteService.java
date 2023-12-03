@@ -1,7 +1,6 @@
 package com.example.JavaDHomework12.note;
 
 import com.example.JavaDHomework12.generetId.GeneretId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,9 +16,9 @@ public class NoteService {
     private final Map<Long, Note> notes = new HashMap<>();
     private GeneretId generetId;
 
-    @Autowired
-    public NoteService() {
-        this.generetId = new GeneretId();
+
+    public NoteService(GeneretId generetId) {
+        this.generetId = generetId;
     }
 
 
